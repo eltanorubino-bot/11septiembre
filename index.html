@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Oficina Núñez · 11 de Septiembre 4237 — Paradise</title>
+<meta name="description" content="Estudio moderno de 70m² recientemente renovado en Núñez, Buenos Aires. Sala de reuniones, cocina equipada, cochera y balcón. Disponible para alquiler corporativo." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Navegación -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">
+      <span class="logo-mark">P</span>
+      <span class="logo-text">Paradise · Núñez</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#espacio">Espacio</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#ambientes">Ambientes</a></li>
+      <li><a href="#barrio">Barrio</a></li>
+      <li><a href="#ubicacion">Ubicación</a></li>
+      <li><a href="#contacto" class="nav-cta">Agendar visita</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="top" class="hero">
+  <div class="hero-bg">
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="dot"></span>
+      <span>En alquiler · Núñez, Buenos Aires</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="line line-1">Oficina</span>
+      <span class="line line-2"><em>de autor</em></span>
+      <span class="line line-3">en Núñez</span>
+    </h1>
+    <p class="hero-subtitle">
+      Un estudio de 70 m² recientemente renovado por una reconocida
+      arquitecta argentina. Pura luz, silencio y carácter.
+    </p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <span class="meta-value">70</span>
+        <span class="meta-label">m² cubiertos</span>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="meta-value">5</span>
+        <span class="meta-label">ambientes</span>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="meta-value">1</span>
+        <span class="meta-label">cochera</span>
+      </div>
+      <div class="meta-divider"></div>
+      <div class="meta-item">
+        <span class="meta-value">3</span>
+        <span class="meta-label">A/A frío–calor</span>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn btn-primary">Agendar visita</a>
+      <a href="#galeria" class="btn btn-ghost">Ver galería →</a>
+    </div>
+  </div>
+  <div class="hero-address">
+    <span class="hero-address-label">Dirección</span>
+    <span class="hero-address-value">Av. 11 de Septiembre 4237 · 4.º A</span>
+  </div>
+  <div class="scroll-hint">
+    <span>Explorar</span>
+    <div class="scroll-line"></div>
+  </div>
+</header>
+
+<!-- INTRO / SOBRE EL ESPACIO -->
+<section id="espacio" class="section intro">
+  <div class="section-head">
+    <span class="section-number">01</span>
+    <span class="section-kicker">Sobre el espacio</span>
+  </div>
+  <div class="intro-grid">
+    <div class="intro-text">
+      <h2 class="section-title">
+        Un estudio de estilo moderno, <em>recientemente renovado</em>.
+      </h2>
+      <p class="lead">
+        El inmueble se encuentra dentro de un bloque de 18 oficinas diseñado por un
+        arquitecto argentino de primera clase. Con 70 m² totales, está dividido en
+        área administrativa, área de trabajo común, sala de reuniones, sector de
+        barra, cocina y baños. La oficina fue restaurada integralmente por una
+        reconocida arquitecta argentina.
+      </p>
+      <p>
+        Es pura luz y silencio. El edificio cuenta además con un espacio adicional
+        de uso común disponible para reuniones, cochera con portón automatizado y
+        portero fijo hasta las 18 hs.
+      </p>
+      <div class="feature-tags">
+        <span class="tag">Recién renovado</span>
+        <span class="tag">Luminoso</span>
+        <span class="tag">Silencioso</span>
+        <span class="tag">Internet instalado</span>
+        <span class="tag">Aire acondicionado</span>
+        <span class="tag">Cocina equipada</span>
+      </div>
+    </div>
+    <div class="intro-visual">
+      <img src="images/MF_190405_Ph_Muriel_Farkas.jpg" alt="Vista general de la oficina" />
+      <div class="intro-badge">
+        <span class="badge-top">PROPIEDAD</span>
+        <span class="badge-mid">Paradise</span>
+        <span class="badge-bot">Núñez · BA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIRA DE DATOS CLAVE -->
+<section class="ticker">
+  <div class="ticker-track">
+    <span>70 m² cubiertos</span><span>·</span>
+    <span>Aire acondicionado frío / calor</span><span>·</span>
+    <span>Cocina equipada</span><span>·</span>
+    <span>Balcón</span><span>·</span>
+    <span>Cochera con portón automatizado</span><span>·</span>
+    <span>Portero hasta las 18 hs</span><span>·</span>
+    <span>Internet de alta velocidad instalado</span><span>·</span>
+    <span>Sala de reuniones común del edificio</span><span>·</span>
+    <span>70 m² cubiertos</span><span>·</span>
+    <span>Aire acondicionado frío / calor</span><span>·</span>
+    <span>Cocina equipada</span><span>·</span>
+    <span>Balcón</span><span>·</span>
+    <span>Cochera con portón automatizado</span><span>·</span>
+    <span>Portero hasta las 18 hs</span><span>·</span>
+    <span>Internet de alta velocidad instalado</span><span>·</span>
+  </div>
+</section>
+
+<!-- GALERÍA PRINCIPAL -->
+<section id="galeria" class="section gallery-section">
+  <div class="section-head">
+    <span class="section-number">02</span>
+    <span class="section-kicker">Galería</span>
+  </div>
+  <h2 class="section-title">
+    Conocé cada rincón <em>del espacio</em>.
+  </h2>
+  <p class="section-lead">
+    25 fotografías profesionales que muestran la calidad de la renovación,
+    el diseño de autor y el carácter único de la oficina.
+  </p>
+
+  <div class="gallery-grid" id="galleryGrid">
+    <!-- Las imágenes se inyectan con JS para manejar el lightbox -->
+  </div>
+</section>
+
+<!-- AMBIENTES -->
+<section id="ambientes" class="section rooms-section">
+  <div class="section-head">
+    <span class="section-number">03</span>
+    <span class="section-kicker">Ambientes</span>
+  </div>
+  <h2 class="section-title">
+    Cinco ambientes, <em>una filosofía</em>.
+  </h2>
+
+  <div class="rooms">
+
+    <article class="room room-1">
+      <div class="room-image">
+        <img src="images/MF_190405_Ph_Muriel_Farkas_5.jpg" alt="Sala de reuniones con mural tropical" />
+      </div>
+      <div class="room-content">
+        <span class="room-tag">01 · Sala de reuniones</span>
+        <h3>Diseño que inspira conversaciones.</h3>
+        <p>
+          Mesa rectangular de madera con base de hierro para cuatro personas,
+          enmarcada por un mural tropical de autor con flamencos y tucanes —
+          el sello visual del espacio. Iluminación contemporánea y vista a la
+          ciudad.
+        </p>
+        <ul class="room-specs">
+          <li><span>Capacidad</span><span>4 personas</span></li>
+          <li><span>Mobiliario</span><span>Mesa madera + hierro</span></li>
+          <li><span>Detalle</span><span>Mural botánico</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="room room-2 reverse">
+      <div class="room-image">
+        <img src="images/MF_190405_Ph_Muriel_Farkas_11.jpg" alt="Área de trabajo común" />
+      </div>
+      <div class="room-content">
+        <span class="room-tag">02 · Área de trabajo común</span>
+        <h3>Mesa larga, ocho puestos, infinitas posibilidades.</h3>
+        <p>
+          Mesa rectangular de madera con base de hierro con conexiones eléctricas
+          integradas para hasta ocho puestos de trabajo, con sus respectivas
+          sillas. Ideal para equipos colaborativos o configuraciones flexibles.
+        </p>
+        <ul class="room-specs">
+          <li><span>Puestos</span><span>Hasta 8</span></li>
+          <li><span>Conectividad</span><span>Tomas integradas</span></li>
+          <li><span>Configurable</span><span>Sí</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="room room-3">
+      <div class="room-image">
+        <img src="images/MF_190405_Ph_Muriel_Farkas_15.jpg" alt="Área administrativa" />
+      </div>
+      <div class="room-content">
+        <span class="room-tag">03 · Área administrativa</span>
+        <h3>Puestos funcionales con almacenamiento.</h3>
+        <p>
+          Dos puestos de trabajo con espacio superior para archivos y carpetas.
+          Un sector pensado para tareas de back-office y concentración profunda,
+          separado del flujo colaborativo principal.
+        </p>
+        <ul class="room-specs">
+          <li><span>Puestos</span><span>2</span></li>
+          <li><span>Almacenamiento</span><span>Estantería superior</span></li>
+          <li><span>Privacidad</span><span>Sector separado</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="room room-4 reverse">
+      <div class="room-image">
+        <img src="images/MF_190405_Ph_Muriel_Farkas_17.jpg" alt="Cocina y comedor" />
+      </div>
+      <div class="room-content">
+        <span class="room-tag">04 · Cocina y comedor</span>
+        <h3>Pausas bien hechas.</h3>
+        <p>
+          Cocina con los espacios necesarios para preparación de alimentos:
+          heladera, anafe eléctrico y microondas. Barra con sillas para comer,
+          ideal para almuerzos de equipo o reuniones informales.
+        </p>
+        <ul class="room-specs">
+          <li><span>Equipamiento</span><span>Heladera · Anafe · Microondas</span></li>
+          <li><span>Barra</span><span>Con sillas</span></li>
+          <li><span>Uso</span><span>Cocina + comedor</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="room room-5">
+      <div class="room-image">
+        <img src="images/MF_190405_Ph_Muriel_Farkas_21.jpg" alt="Balcón y vistas" />
+      </div>
+      <div class="room-content">
+        <span class="room-tag">05 · Balcón y servicios</span>
+        <h3>Detalles que hacen la diferencia.</h3>
+        <p>
+          Pequeño balcón para pausas al aire libre, baño completo y servicio de
+          internet de alta velocidad ya instalado. La unidad incluye además una
+          cochera fija con portón automatizado en el edificio.
+        </p>
+        <ul class="room-specs">
+          <li><span>Balcón</span><span>Sí</span></li>
+          <li><span>Baño</span><span>1 completo</span></li>
+          <li><span>Cochera</span><span>Incluida</span></li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- BARRIO / ZONA -->
+<section id="barrio" class="section neighborhood">
+  <div class="section-head">
+    <span class="section-number">04</span>
+    <span class="section-kicker">El barrio</span>
+  </div>
+  <div class="neighborhood-intro">
+    <h2 class="section-title">
+      Núñez <em>es un lujo</em> cotidiano.
+    </h2>
+    <p class="lead">
+      Uno de los barrios más codiciados de Buenos Aires. Arbolado, tranquilo,
+      con una escena gastronómica en expansión y acceso directo a las
+      principales avenidas y autopistas de la ciudad.
+    </p>
+  </div>
+
+  <!-- Tabs de categorías -->
+  <div class="category-tabs">
+    <button class="tab active" data-category="restaurantes">
+      <span class="tab-icon">🍽</span>
+      <span>Restaurantes</span>
+    </button>
+    <button class="tab" data-category="cafes">
+      <span class="tab-icon">☕</span>
+      <span>Cafés</span>
+    </button>
+    <button class="tab" data-category="transporte">
+      <span class="tab-icon">🚆</span>
+      <span>Transporte</span>
+    </button>
+    <button class="tab" data-category="servicios">
+      <span class="tab-icon">⚡</span>
+      <span>Servicios</span>
+    </button>
+  </div>
+
+  <div class="places-grid" id="placesGrid">
+    <!-- Se inyecta con JS -->
+  </div>
+</section>
+
+<!-- UBICACIÓN -->
+<section id="ubicacion" class="section location">
+  <div class="section-head">
+    <span class="section-number">05</span>
+    <span class="section-kicker">Ubicación</span>
+  </div>
+  <h2 class="section-title">
+    Estratégicamente <em>conectada</em>.
+  </h2>
+
+  <div class="location-grid">
+    <div class="location-info">
+      <div class="address-card">
+        <span class="address-label">Dirección</span>
+        <p class="address-value">
+          Av. 11 de Septiembre de 1888 · 4237<br>
+          Apt. 4.º A<br>
+          Núñez · CABA · Argentina
+        </p>
+      </div>
+
+      <div class="accesses">
+        <h4>Accesos</h4>
+        <div class="access-item">
+          <span class="access-ico">🛣</span>
+          <div>
+            <strong>Autopistas y avenidas</strong>
+            <p>Fácil acceso a la Autopista General Paz y la Av. del Libertador, a pocos metros del edificio.</p>
+          </div>
+        </div>
+        <div class="access-item">
+          <span class="access-ico">🚆</span>
+          <div>
+            <strong>Tren Mitre · Ramal Tigre</strong>
+            <p>Estación Núñez a pocas cuadras. Conexión directa con Retiro y zona norte.</p>
+          </div>
+        </div>
+        <div class="access-item">
+          <span class="access-ico">🍴</span>
+          <div>
+            <strong>Gastronomía</strong>
+            <p>Variedad gastronómica a metros: parrillas, cafés de especialidad, cocina italiana y propuestas de autor.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlights">
+        <div class="highlight">
+          <span class="highlight-value">10'</span>
+          <span class="highlight-label">a Aeroparque</span>
+        </div>
+        <div class="highlight">
+          <span class="highlight-value">5'</span>
+          <span class="highlight-label">a Libertador</span>
+        </div>
+        <div class="highlight">
+          <span class="highlight-value">15'</span>
+          <span class="highlight-label">a Puerto Madero</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="location-map">
+      <div id="map"></div>
+      <div class="map-legend">
+        <div class="legend-item"><span class="dot-oficina"></span>Oficina</div>
+        <div class="legend-item"><span class="dot-food"></span>Gastronomía</div>
+        <div class="legend-item"><span class="dot-transit"></span>Transporte</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES / CARACTERÍSTICAS EN GRID -->
+<section class="section features-section">
+  <div class="section-head">
+    <span class="section-number">06</span>
+    <span class="section-kicker">Ficha técnica</span>
+  </div>
+  <h2 class="section-title">Todo lo que <em>incluye</em>.</h2>
+
+  <div class="features">
+    <div class="feature">
+      <span class="feature-num">01</span>
+      <h4>Superficie</h4>
+      <p>70 m² cubiertos distribuidos en cinco ambientes funcionales.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-num">02</span>
+      <h4>Climatización</h4>
+      <p>Tres equipos de aire acondicionado frío / calor independientes.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-num">03</span>
+      <h4>Cocina equipada</h4>
+      <p>Heladera, anafe eléctrico, microondas y barra con sillas.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-num">04</span>
+      <h4>Cochera</h4>
+      <p>Cochera fija con portón automatizado en el edificio.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-num">05</span>
+      <h4>Seguridad</h4>
+      <p>Portero fijo del edificio hasta las 18 hs. Acceso controlado.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-num">06</span>
+      <h4>Conectividad</h4>
+      <p>Servicio de internet de alta velocidad ya instalado.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-num">07</span>
+      <h4>Mobiliario</h4>
+      <p>Mesas de trabajo y sillones de diseño incluidos.</p>
+    </div>
+    <div class="feature">
+      <span class="feature-num">08</span>
+      <h4>Extra</h4>
+      <p>Balcón privado + sala de reuniones común del edificio.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACTO -->
+<section id="contacto" class="section contact">
+  <div class="contact-inner">
+    <span class="contact-eyebrow">¿Te interesa?</span>
+    <h2 class="contact-title">
+      Buscamos un aliado comercial<br>
+      <em>para un alquiler mínimo de un año.</em>
+    </h2>
+    <p class="contact-lead">
+      Estamos abiertos a responder cualquier duda sobre las condiciones y
+      características del inmueble, así como a coordinar una visita.
+      Somos más accesibles por texto o correo electrónico durante el día.
+    </p>
+
+    <div class="contact-cards">
+      <a href="mailto:fer@paradise.ag" class="contact-card">
+        <span class="contact-card-label">Email</span>
+        <span class="contact-card-value">fer@paradise.ag</span>
+        <span class="contact-card-arrow">→</span>
+      </a>
+      <a href="https://wa.me/5491144497824" target="_blank" rel="noopener" class="contact-card">
+        <span class="contact-card-label">WhatsApp / Tel</span>
+        <span class="contact-card-value">+54 9 11 4449 7824</span>
+        <span class="contact-card-arrow">→</span>
+      </a>
+      <a href="#galeria" class="contact-card">
+        <span class="contact-card-label">Volver a la galería</span>
+        <span class="contact-card-value">Ver todas las fotos</span>
+        <span class="contact-card-arrow">↑</span>
+      </a>
+    </div>
+
+    <p class="contact-contact-person">
+      <strong>Fernando</strong> — referente del inmueble
+    </p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-mark">P</span>
+      <div>
+        <strong>Paradise</strong>
+        <span>Oficina Núñez · 11 de Septiembre 4237</span>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <p>© 2025 Paradise. Todos los derechos reservados.</p>
+      <p>Fotografía: Muriel Farkas</p>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" aria-label="Cerrar">×</button>
+  <button class="lightbox-prev" aria-label="Anterior">‹</button>
+  <button class="lightbox-next" aria-label="Siguiente">›</button>
+  <div class="lightbox-content">
+    <img id="lightboxImg" src="" alt="" />
+    <div class="lightbox-counter"><span id="lbCurrent">1</span> / <span id="lbTotal">25</span></div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="script.js"></script>
+</body>
+</html>
