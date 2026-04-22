@@ -4,19 +4,20 @@
    =========================================================== */
 
 :root {
-  /* Paleta */
-  --bg: #f5f1e8;              /* crema cálido */
-  --bg-alt: #ebe5d4;          /* crema más profundo */
-  --ink: #1a2e23;             /* verde muy oscuro, casi negro */
-  --ink-soft: #3a4a40;
-  --ink-muted: #6b7872;
+  /* Paleta sobria y corporativa */
+  --bg: #f7f6f3;              /* off-white cálido */
+  --bg-alt: #ededea;          /* gris piedra muy claro */
+  --ink: #16202a;             /* navy casi negro */
+  --ink-soft: #39434d;
+  --ink-muted: #7a828a;
   --paper: #ffffff;
-  --jungle: #2d4a38;          /* verde selva */
-  --jungle-deep: #152820;     /* verde profundo */
-  --coral: #d86a52;           /* coral / salmón */
-  --coral-soft: #e8a595;
-  --gold: #c9a959;            /* dorado suavizado */
-  --sand: #e9dcc3;
+  --jungle: #1f2d38;          /* navy profundo */
+  --jungle-deep: #0e151c;     /* navy casi negro */
+  --coral: #8a6d4c;           /* dorado terroso apagado (acento único, muy sutil) */
+  --coral-soft: #c8b79b;
+  --gold: #8a6d4c;
+  --sand: #e0d9cb;
+  --border: rgba(22,32,42,0.12);
 
   /* Tipografía */
   --font-serif: 'Fraunces', 'Playfair Display', Georgia, serif;
@@ -58,7 +59,7 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
-h2 em, h3 em, .hero-title em { font-style: italic; font-weight: 300; color: var(--jungle); }
+h2 em, h3 em, .hero-title em { font-style: italic; font-weight: 300; color: var(--ink-soft); }
 
 /* ============ NAV ============ */
 .nav {
@@ -160,11 +161,12 @@ h2 em, h3 em, .hero-title em { font-style: italic; font-weight: 300; color: var(
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('images/MF_190405_Ph_Muriel_Farkas_5.jpg');
+  background-image: url('images/MF_190405_Ph_Muriel_Farkas_1.jpg');
   background-size: cover;
   background-position: center;
   transform: scale(1.08);
   animation: heroZoom 20s ease-out forwards;
+  filter: grayscale(25%) contrast(0.95);
 }
 @keyframes heroZoom {
   to { transform: scale(1); }
@@ -173,8 +175,7 @@ h2 em, h3 em, .hero-title em { font-style: italic; font-weight: 300; color: var(
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(21,40,32,0.35) 0%, rgba(21,40,32,0.6) 55%, rgba(21,40,32,0.9) 100%),
-    radial-gradient(circle at 25% 30%, rgba(216,106,82,0.2) 0%, transparent 55%);
+    linear-gradient(180deg, rgba(14,21,28,0.45) 0%, rgba(14,21,28,0.65) 55%, rgba(14,21,28,0.92) 100%);
   z-index: 1;
 }
 .hero-content {
@@ -203,16 +204,16 @@ h2 em, h3 em, .hero-title em { font-style: italic; font-weight: 300; color: var(
   animation: fadeUp .8s var(--ease) 0.3s forwards;
 }
 .dot {
-  width: 8px; height: 8px;
+  width: 7px; height: 7px;
   border-radius: 50%;
-  background: var(--coral-soft);
-  box-shadow: 0 0 0 0 var(--coral-soft);
-  animation: pulse 2s infinite;
+  background: var(--bg);
+  opacity: 0.85;
 }
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(232,165,149,0.7); }
-  50% { box-shadow: 0 0 0 10px rgba(232,165,149,0); }
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 0.4; }
 }
+.dot { animation: pulse 2.5s ease-in-out infinite; }
 
 .hero-title {
   font-size: clamp(3rem, 10vw, 8rem);
@@ -262,7 +263,7 @@ h2 em, h3 em, .hero-title em { font-style: italic; font-weight: 300; color: var(
   font-weight: 300;
   font-size: clamp(2rem, 4vw, 3rem);
   line-height: 1;
-  color: var(--coral-soft);
+  color: rgba(247,246,243,0.95);
 }
 .meta-label {
   font-size: 0.78rem;
@@ -295,13 +296,14 @@ h2 em, h3 em, .hero-title em { font-style: italic; font-weight: 300; color: var(
   transition: all .35s var(--ease);
 }
 .btn-primary {
-  background: var(--coral);
-  color: var(--paper);
-}
-.btn-primary:hover {
   background: var(--bg);
   color: var(--ink);
+}
+.btn-primary:hover {
+  background: var(--paper);
+  color: var(--ink);
   transform: translateY(-2px);
+  box-shadow: 0 10px 30px -15px rgba(0,0,0,0.4);
 }
 .btn-ghost {
   color: var(--bg);
@@ -361,14 +363,13 @@ h2 em, h3 em, .hero-title em { font-style: italic; font-weight: 300; color: var(
 .scroll-line::after {
   content: '';
   position: absolute;
-  top: 0; left: -50px;
-  width: 50px; height: 100%;
-  background: var(--coral-soft);
-  animation: scrollDash 2.5s ease-in-out infinite;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(247,246,243,0.5);
 }
 @keyframes scrollDash {
-  0% { left: -50px; }
-  100% { left: 50px; }
+  0% { left: 0; }
+  100% { left: 0; }
 }
 
 .hero-content {
@@ -506,29 +507,37 @@ h2 em, h3 em, .hero-title em { font-style: italic; font-weight: 300; color: var(
   color: rgba(245,241,232,0.65);
 }
 
-/* ============ TICKER ============ */
+/* ============ DATA STRIP (reemplaza ticker) ============ */
 .ticker {
-  overflow: hidden;
   background: var(--ink);
   color: var(--bg);
-  padding: 1.4rem 0;
-  white-space: nowrap;
-  border-top: 1px solid rgba(245,241,232,0.08);
-  border-bottom: 1px solid rgba(245,241,232,0.08);
+  padding: 2.5rem var(--pad);
+  border-top: 1px solid rgba(247,246,243,0.08);
+  border-bottom: 1px solid rgba(247,246,243,0.08);
 }
 .ticker-track {
-  display: inline-flex;
-  align-items: center;
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 300;
-  font-size: 1.35rem;
-  animation: ticker 45s linear infinite;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(247,246,243,0.75);
+  animation: none;
 }
-.ticker-track span:nth-child(even) { color: var(--coral); }
-@keyframes ticker {
-  to { transform: translateX(-50%); }
+.ticker-track span {
+  display: block;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(247,246,243,0.15);
+  line-height: 1.4;
+}
+.ticker-track span:nth-child(even) { color: inherit; }
+
+@media (max-width: 720px) {
+  .ticker-track { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
 }
 
 /* ============ GALLERY ============ */
@@ -824,8 +833,14 @@ h2 em, h3 em, .hero-title em { font-style: italic; font-weight: 300; color: var(
 }
 .access-item:last-child { border-bottom: none; }
 .access-ico {
-  font-size: 1.4rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--ink-muted);
   flex-shrink: 0;
+  padding-top: 0.1rem;
+  min-width: 1.5rem;
 }
 .access-item strong {
   display: block;
